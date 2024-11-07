@@ -1,0 +1,52 @@
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+th {
+    background-color: #66b9c8;
+    color: white;
+}
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+        width: 100%;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        text-align: left;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        color: #66b9c8;
+    }
+    
+td:nth-child(1)::before { content: "Име"; }
+td:nth-child(2)::before { content: "Възраст"; }
+td:nth-child(3)::before { content: "Град"; }
+}
